@@ -1,3 +1,4 @@
+#remove items whose weight is greater than 50
 def big_weights(items, trips):
 	for item in range(len(items)-1, -1, -1):
 		if items[item] >= 50:
@@ -6,7 +7,7 @@ def big_weights(items, trips):
 			if items != []:
 				return big_weights(items, trips)
 	return trips		
-
+#combine the small weights to make 50
 def small_weights(items, trips):
 	last_item=items[-1]
 	required_items=50//last_item
@@ -39,7 +40,8 @@ def no_of_trips():
 						trips=small_weights(W, trips)
 					del m[0:N]
 					fo.write("Case #%d: %d\n" %(i, trips))
+	fo.close()
 	f.close()
 
-
-no_of_trips()
+if __name__=="__main__":
+	no_of_trips()
